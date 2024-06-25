@@ -9,8 +9,8 @@ import usePersist from '../../hooks/usePersist'
 import PulseLoader from 'react-spinners/PulseLoader'
 
 const Login = () => {
-    const userRef = useRef()
-    const errRef = useRef()
+    const userRef = useRef(null)
+    const errRef = useRef(null)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errMsg, setErrMsg] = useState('')

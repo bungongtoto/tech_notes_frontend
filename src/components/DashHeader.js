@@ -1,5 +1,5 @@
-// import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faFileCirclePlus,
   faFilePen,
@@ -7,6 +7,7 @@ import {
   faUserPlus,
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
+
 import { useNavigate, Link, useLocation } from "react-router-dom";
 
 import { useSendLogoutMutation } from "../features/auth/authApiSlice";
@@ -24,12 +25,6 @@ const DashHeader = () => {
   const { pathname } = useLocation();
 
   const [sendLogout, { isLoading, isError, error }] = useSendLogoutMutation();
-
-  //   useEffect(() => {
-  //     if (isSuccess) {
-  //       navigate("/");
-  //     }
-  //   }, [isSuccess, navigate]);
 
   const onLogoutClicked = async () => {
     await sendLogout().unwrap();
